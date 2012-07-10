@@ -1,0 +1,3 @@
+<a href='/'> go back  </a>
+<h1>List Of Fruits</h2>
+%(fruits)s

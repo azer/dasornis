@@ -1,0 +1,4 @@
+class TemplateAdapterDoesntExist(Exception): pass
+class TemplateError(Exception): pass
+class NotImplemented(Exception): pass
+class HTTPNotFound(Exception): pass

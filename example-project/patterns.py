@@ -1,0 +1,1 @@
+safe_text = r'[\w\s]+'

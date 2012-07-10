@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 35
+/dasornis/!svn/ver/1/sample-project
+END
+queries.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/dasornis/!svn/ver/1/sample-project/queries.py
+END
+urls.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/dasornis/!svn/ver/1/sample-project/urls.py
+END
+dasornisconf.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/dasornis/!svn/ver/1/sample-project/dasornisconf.py
+END
+.log
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/dasornis/!svn/ver/1/sample-project/.log
+END
+request_handlers.py
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/dasornis/!svn/ver/1/sample-project/request_handlers.py
+END

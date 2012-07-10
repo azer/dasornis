@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip='True'>
+  <xi:include href="generate_form.html" />
+  <head>
+    <title>Add Fruit</title>
+  </head>
+  <body>
+    <fieldset class='NewMessage'>
+      <legend>Add Fruit</legend>
+        Report Message: ${ i18n | report.message_key }
+        <form method='POST' action='/add'>
+          ${ generate_form(template.form) }
+          <button>Send</button>
+        </form>
+    </fieldset>
+  </body>
+</html>

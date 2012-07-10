@@ -1,0 +1,82 @@
+import exceptions,patterns
+from functools import partial
+
+class FormBase(type):
+  def __init__(cls,name,bases,attrs):
+    super(FormBase,cls).__init__(name,bases,cls)
+
+  def __call__(cls):
+    form = Form.__new__(cls)
+    form.__fields__ = []
+    for fkey in form.__order__ if hasattr(form,'__order__') else dir(form):
+      if not (fkey[0:2]=='__' and fkey[-2:]=='__'):
+        field = getattr(form,fkey)()
+        setattr(form,fkey,field)
+        form.__fields__.append(field)
+    return form
+
+class Form(object):
+  __metaclass__ = FormBase
+
+class FieldBase(type):
+    def __call__(cls,*args,**kwargs):
+        def create_instance(form):
+            obj = super(Field,cls).__new__(cls,*args,**kwargs)
+            obj.__init__(form,*args,**kwargs)
+            return obj
+        return create_instance
+
+class Field(object):
+  __metaclass__ = FieldBase
+
+  def __init__(self,form,*args,**kwargs):
+    self.__form__ = form
+    self.is_required = kwargs['is_required'] if 'is_required' in kwargs else True
+    self.name = kwargs.get('name') or 'Unnamed'
+    self.label_key = kwargs['label_key'] if 'label_key' in kwargs else self.name
+    self.type = None
+    self.value = kwargs.get('value')
+  
+  def str__(self):
+    return "<lib.form.Field object (name='%s')>"%self.name
+
+class TextField(Field):
+  def __init__(self,*args,**kwargs):
+    Field.__init__(self,*args,**kwargs)
+    self.min_length = kwargs['min_length'] if 'min_length' in kwargs else 0
+    self.max_length = kwargs['max_length'] if 'max_length' in kwargs else 256
+    self.pattern = kwargs['pattern'] if 'pattern' in kwargs else patterns.alphanumeric
+    self.type = 'text'
+    self.is_multiline = kwargs.get('is_multiline') or False
+
+  def validate(self):
+    if self.is_required and not self.value:
+      raise exceptions.MissingInfo,self
+    elif not self.min_length<=len(self.value)<=self.max_length:
+      raise exceptions.LengthError,self
+    elif not self.pattern.match(self.value):
+      raise exceptions.InvalidInput,self
+
+class PasswordField(TextField):
+  def __init__(self,*args,**kwargs):
+    TextField.__init__(self,*args,**kwargs)
+    self.min_length = 3
+    self.max_length = 16
+    self.pattern = patterns.alphanumeric
+    self.type = 'password'
+    
+  def validate(self):
+    TextField.validate(self)
+    if self.__form__.password == self and hasattr(self.__form__,'password_again') and not self.__form__.password_again.value == self.value:
+      raise exceptions.PasswordMismatch,self
+
+class ComboboxField(TextField):
+  def __init__(self,*args,**kwargs):
+    TextField.__init__(self,*args,**kwargs)
+    self.choices = kwargs['choices']
+    self.pattern = None
+    self.type = 'combobox'
+    
+  def validate(self):
+    if not self.value in self.choices:
+      raise exceptions.InvalidOption,self

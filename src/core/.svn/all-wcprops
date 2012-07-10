@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/dasornis/!svn/ver/1/dasornis/core
+END
+dispatcher.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/dasornis/!svn/ver/1/dasornis/core/dispatcher.py
+END
+report.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/dasornis/!svn/ver/1/dasornis/core/report.py
+END
+http_handler.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/dasornis/!svn/ver/1/dasornis/core/http_handler.py
+END
+validators.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/dasornis/!svn/ver/1/dasornis/core/validators.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/dasornis/!svn/ver/1/dasornis/core/__init__.py
+END
+wsgi.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/dasornis/!svn/ver/1/dasornis/core/wsgi.py
+END
+urlmap.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/dasornis/!svn/ver/1/dasornis/core/urlmap.py
+END
+base_handler.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/dasornis/!svn/ver/1/dasornis/core/base_handler.py
+END
+http_response.py
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/dasornis/!svn/ver/1/dasornis/core/http_response.py
+END
+http_request.py
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/dasornis/!svn/ver/1/dasornis/core/http_request.py
+END

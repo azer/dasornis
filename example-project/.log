@@ -1,0 +1,4 @@
+2009-10-03 12:38:43,959 INFO db.query: Running new query; SELECT id,name FROM fruits
+2009-10-03 12:38:43,966 INFO db: Initializing new database cursor.
+2009-10-03 12:38:43,966 INFO db: Initializing new connection..
+2009-10-03 12:42:41,362 INFO db.query: Running new query; SELECT id,name FROM fruits

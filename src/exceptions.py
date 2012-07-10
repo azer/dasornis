@@ -1,0 +1,9 @@
+class TemplateAdapterDoesntExist(Exception): pass
+class TemplateError(Exception): pass
+class NotImplemented(Exception): pass
+class HTTPNotFound(Exception): pass
+class InvalidXSLDecleration(Exception): pass
+class MissingDependency(Exception): pass
+class LengthError(Exception): pass
+class MissingInfo(Exception): pass
+class InvalidInput(Exception): pass

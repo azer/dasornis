@@ -1,0 +1,16 @@
+from sys import exc_info
+from exception_info import ExceptionInfo
+
+class get_message(object):
+  def __init__(self,module):
+    self.module = module
+
+  def __or__(self,msg_key):
+    result = '#!%s!#'%msg_key
+    try:
+      result = self.module.__dict__[msg_key]
+    except:
+      ExceptionInfo(exc_info()).log()
+      result = '#%s#'%msg_key
+    
+    return result

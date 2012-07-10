@@ -1,0 +1,9 @@
+from dasornis.core import URLMap
+
+import request_handlers
+
+map = URLMap(
+  ('^/?$',request_handlers.Homepage),
+  ('^/list',request_handlers.ListPage),
+  ('^/add',request_handlers.AddPage)
+)

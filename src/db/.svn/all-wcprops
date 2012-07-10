@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/dasornis/!svn/ver/1/dasornis/db
+END
+queries.py
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/dasornis/!svn/ver/1/dasornis/db/queries.py
+END
+query_result.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/dasornis/!svn/ver/1/dasornis/db/query_result.py
+END
+entity.py
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/dasornis/!svn/ver/1/dasornis/db/entity.py
+END
+__init__.py
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/dasornis/!svn/ver/1/dasornis/db/__init__.py
+END
+dbconnection.py
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/dasornis/!svn/ver/1/dasornis/db/dbconnection.py
+END
+field.py
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/dasornis/!svn/ver/1/dasornis/db/field.py
+END
+query.py
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/dasornis/!svn/ver/1/dasornis/db/query.py
+END

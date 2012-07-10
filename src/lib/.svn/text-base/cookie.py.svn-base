@@ -1,0 +1,20 @@
+from argument_set import ArgumentSet
+from re import findall
+
+class CookieHandler(ArgumentSet):
+  def __init__(self,request_handler):
+    self.request_handler = request_handler
+    self.raw_data = request_handler.request.META.get('HTTP_COOKIE') or ''
+    self.data = {}
+    self.load()
+
+  def load(self):
+    for key,value in findall(r'(\w+)\=([^\;]+);?',self.raw_data):
+      ArgumentSet.__setitem__(self,key,value)
+
+  def __getitem__(self,key):
+    return ArgumentSet.__getitem__(self,key)
+
+  def __setitem__(self,*args,**kwargs):
+    self.request_handler.response.set_cookie(*args,**kwargs)
+    ArgumentSet.__setitem__(self,*args,**kwargs)

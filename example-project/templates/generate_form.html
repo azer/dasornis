@@ -1,0 +1,23 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      py:strip='True'>
+  <div py:def='generate_form(form)' class='Form'>
+    <div py:for='field in form._fields_' id='${ field.name }' class='FormLine${ " Error" if report.exception and report.exception.value.message and isinstance(report.exception.value.message,field.__class__) and report.exception.value.message.name == field.name else "" }'>
+      <div class='Label'>${ i18n | field.label_i18n_key } ${ field.is_required and '*' or '' }</div>
+      <div py:if='field.type=="text"' class='Field TextField'>
+          <input py:if='not field.is_multiline' name='${ field.name }' type='text' value='${ request.POST.get(field.name) or field.value }' />
+          <textarea py:if='field.is_multiline' name='${ field.name }'>${ request.POST.get(field.name) or field.value }</textarea>
+      </div>
+      <div py:if='field.type=="password"' class='Field PasswordField'>
+        <input name='${ field.name }' type='password' value='${ request.POST.get(field.name) or field.value }' />
+      </div>
+      <div py:if='field.type=="combobox"' class='Field ComboboxField'>
+        <select name='${ field.name }'>
+          <option py:for='ckey in field.choices' py:content='field.choices[ckey]' value='${ ckey }'></option>
+        </select>
+      </div>
+      <div class='Clear'></div>
+    </div>
+  </div>
+</html>

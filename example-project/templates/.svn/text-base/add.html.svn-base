@@ -1,0 +1,8 @@
+<form action='/add' method='post'>
+  <fieldset>
+    <legend>Add Fruit</legend>
+    <input type='text' name='fruit' />
+    <button>Submit</button>
+ </fieldset>
+</form>
+
