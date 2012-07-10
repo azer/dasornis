@@ -64,28 +64,30 @@ class NewFruit(Form):
 ## HTTP
 
 ```python
+# urls.py
+
 from dasornis.core import URLMap,StaticContent
 from static.urls import map as static_urls
 
 import request_handlers
 
 map = URLMap(
-  ('^/?$',request_handlers.Homepage),
-  ('^/list',request_handlers.ListPage),
-  ('^/add',request_handlers.AddPage),
+  ('^/add',request_handlers.NewFruit),
   ('^/logo',StaticContent('static/logo.gif')),
   ('^/static/(.+)',static_urls)
 )
 ```
 
 ```python
+# request_handlers.py
+
 from dasornis.core import HttpHandler
 from dasornis.forms.validators import ValidateForm
 from dasornis.template import Template
 from dasornis import exceptions
 import queries,forms
 
-class AddPage(HttpHandler):
+class NewFruit(HttpHandler):
   def init(self):
     self.template = Template(self,'add.html','genshi_engine')
     self.template.form = forms.NewFruit()
