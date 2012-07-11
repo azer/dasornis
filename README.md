@@ -23,7 +23,7 @@ class CreateFruit(Query):
     code = "INSERT INTO fruits(name) VALUES ('%s')"
 ```
 
-## Templates and Forms 
+### Templates and Forms 
 
 ```python
 # forms.py
@@ -58,7 +58,7 @@ class NewFruit(Form):
 </html>
 ```
 
-## HTTP
+### HTTP
 
 ```python
 # urls.py
