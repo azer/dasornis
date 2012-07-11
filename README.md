@@ -2,12 +2,9 @@ Dasornis is a highly-customizable Python Web Framework that I coded on March
 2009. It consists of HTTP, ORM, Templating, I18n and Form libraries.  See the example
 application for details.
 
-# Example
+# Usage Example
 
-## Defining Models
-
-Dasornis' ORM Library fits the coders willing to keep writing SQL queries more
-than the ones who prefer relying on the abstractions covering SQL generation.
+### Defining Models
 
 ```python
 # queries.py
