@@ -1,5 +1,5 @@
 Dasornis is a highly-customizable Python Web Framework that I coded on March
-2009. It consists of HTTP, ORM, Templating, I18n and Form libraries.  See the example
+2009. It consists of Routing, ORM, Templating, I18n and Form libraries.  See the example
 application for details.
 
 # Usage Example
